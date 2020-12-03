@@ -1,0 +1,55 @@
+{
+  "name": "app-fe",
+  "version": "0.1.0",
+  "description": "",
+  "repository": "github:ccarcaci/websocket-bridging",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@types/react": "^17.0.0",
+    "eslint-plugin-security": "^1.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "buildImageProd": "docker build --tag ws-bridge/fe:prod .",
+    "eject": "react-scripts eject",
+    "ncuUpdateMinor": "ncu --upgrade --target minor && npm install",
+    "ncuVerifyUpdateMajor": "ncu --target latest",
+    "ncuVerifyUpdateMinor": "ncu --target minor --errorLevel 2",
+    "prestart": "cp verifyTypeScriptSetup.js node_modules/react-scripts/scripts/utils",
+    "start": "env-cmd --file .env react-scripts start",
+    "test": "cross-env CI=true react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
+    "eslint-plugin-react": "^7.21.5",
+    "npm-check-updates": "^10.2.2",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.1.2"
+  }
+}

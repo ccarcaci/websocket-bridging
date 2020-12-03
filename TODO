@@ -1,0 +1,6 @@
+* x-forwarded-for solution https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For
+* Workspace
+* Gate app (server part of the library)
+* Frontend app (client part of the library)
+* Source app (server part of the library) x2
+* Redirect example

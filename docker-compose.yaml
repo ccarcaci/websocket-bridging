@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  fe:
+    build:
+      context: ./app-fe
+      target: compose-run
+    command: env-cmd --file .env react-scripts start
+    container_name: ws-bridge-fe
+    image: we-bridge/fe
+    ports:
+      - 8080:3000
+    volumes:
+      - ./app-fe/src:/app/src
+  datasource:
+    build:
+      context: ./app-datasource
+      target: compose-run
+    command: nodemon --register dotenv/config --watch src src/index.ts
+    container_name: we-bridge-datasource
+    image: ws-bridge/datasource
+    ports:
+      - 4242:4000
+    volumes:
+      - ./app-bff/src:/app/src
+  gate:
+    build:
+      context: ./app-gate
+      target: compose-run
+    command: nodemon --register dotenv/config --watch src src/index.ts
+    container_name: we-bridge-gate
+    image: ws-bridge/gate
+    ports:
+      - 4242:4000
+    volumes:
+      - ./app-bff/src:/app/src

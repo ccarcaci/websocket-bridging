@@ -11,25 +11,36 @@ services:
       - 8080:3000
     volumes:
       - ./app-fe/src:/app/src
-  datasource:
-    build:
-      context: ./app-datasource
-      target: compose-run
-    command: nodemon --register dotenv/config --watch src src/index.ts
-    container_name: we-bridge-datasource
-    image: ws-bridge/datasource
-    ports:
-      - 4242:4000
-    volumes:
-      - ./app-bff/src:/app/src
   gate:
     build:
       context: ./app-gate
       target: compose-run
     command: nodemon --register dotenv/config --watch src src/index.ts
-    container_name: we-bridge-gate
+    container_name: ws-bridge-gate
     image: ws-bridge/gate
     ports:
-      - 4242:4000
+      - 4280:4000
+    volumes:
+      - ./app-bff/src:/app/src
+  datasource:
+    build:
+      context: ./app-datasource
+      target: compose-run
+    command: nodemon --register dotenv/config --watch src src/index.ts
+    container_name: ws-bridge-datasource
+    image: ws-bridge/datasource
+    ports:
+      - 4282:4000
+    volumes:
+      - ./app-bff/src:/app/src
+  datasource2:
+    build:
+      context: ./app-datasource
+      target: compose-run
+    command: nodemon --register dotenv/config --watch src src/index.ts
+    container_name: ws-bridge-datasource-2
+    image: ws-bridge/datasource
+    ports:
+      - 4284:4000
     volumes:
       - ./app-bff/src:/app/src

@@ -1,6 +1,6 @@
 set -e
 
-git push --no-verify origin dev
+git push origin dev
 git checkout main
 git merge dev
 git push origin main

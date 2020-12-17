@@ -19,7 +19,6 @@
     "ncuUpdateMinor": "ncu --upgrade --target minor && npm install",
     "ncuVerifyUpdateMajor": "ncu --target latest",
     "ncuVerifyUpdateMinor": "ncu --target minor --errorLevel 2",
-    "prestart": "cp verifyTypeScriptSetup.js node_modules/react-scripts/scripts/utils",
     "start": "env-cmd --file .env react-scripts start",
     "test": "cross-env CI=true react-scripts test"
   },

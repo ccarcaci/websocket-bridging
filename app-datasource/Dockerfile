@@ -1,6 +1,6 @@
 FROM node:14.15-alpine3.12 as compose-dependencies
 
-WORKDIR app
+WORKDIR /app
 
 COPY package.json .
 

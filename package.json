@@ -4,7 +4,6 @@
   "description": "Websocket Connection Bridging Project",
   "scripts": {
     "ncuUpdateMinor": "ncu --upgrade --target minor && npm install",
-    "ncuVerifyUpdateMinor": "ncu --target minor --errorLevel 2",
     "ncuVerifyUpdateMajor": "ncu --target latest"
   },
   "repository": "github:ccarcaci/websocket-bridging",
@@ -15,13 +14,7 @@
   },
   "homepage": "https://github.com/ccarcaci/websocket-bridging#readme",
   "devDependencies": {
-    "husky": "^4.3.6",
     "lerna": "^3.22.1",
     "npm-check-updates": "^10.2.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "sh preCommitHook.sh"
-    }
   }
 }

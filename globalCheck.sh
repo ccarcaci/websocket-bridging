@@ -20,4 +20,4 @@ npx lerna run --concurrency 1 --stream linter
 set CI=true && npx lerna run --concurrency 1 --stream test
 npx lerna run --concurrency 1 --stream build
 
-echo "Pre commit hook went good"
+echo "Global check went good"
